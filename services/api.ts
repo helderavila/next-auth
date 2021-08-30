@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios";
-import { destroyCookie, parseCookies, setCookie } from "nookies";
+import { parseCookies, setCookie } from "nookies";
 import { signOut } from "../contexts/AuthContext";
 
 let cookies = parseCookies();
