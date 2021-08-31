@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react"
+import { Can } from "../components/Can"
 import { AuthContext } from "../contexts/AuthContext"
 import { userCan } from "../hooks/userCan"
 import { setupAPIClient } from "../services/api"
@@ -19,6 +20,9 @@ export default function Dashboard() {
   return (
     <>
       <h1>Dashboard {user?.email}</h1>
+      <Can permissions={['metrics.list']}>
+        <h1>Metrics</h1>
+      </Can>
       {userCanSeeMetrics && <div>Metrics </div>}
     </>
   )
